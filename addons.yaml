@@ -1,7 +1,7 @@
 microk8s-addons:
   description: "My awesome demo repository."
   addons:
-    - name: "python-hello-k8s"
+    - name: "poc-python-hello-k8s"
       description: "Demo addon implemented in python"
       version: "1.0.0"
       check_status: "deployment.apps/python-demo-nginx"
@@ -9,7 +9,7 @@ microk8s-addons:
         - arm64
         - amd64
 
-    - name: "bash-hello-k8s"
+    - name: "poc-bash-hello-k8s"
       description: "Bash based demo addon"
       version: "1.0.0"
       check_status: "deployment.apps/bash-demo-nginx"
@@ -17,9 +17,15 @@ microk8s-addons:
         - amd64
         - arm64
         - s390x
-    - name: "argocd"
+    - name: "poc-argocd"
       description: "Argo CD is a declarative continuous deployment for Kubernetes."
       version: "2.4.14"
       check_status: "deployment.apps/argo-cd-argocd-server"
+      supported_architectures:
+        - amd64
+    - name: "poc-istio"
+      description: "Core Istio service mesh services"
+      version: "1.14.4"
+      check_status: "${SNAP_DATA}/bin/istioctl"
       supported_architectures:
         - amd64

@@ -17,3 +17,9 @@ microk8s-addons:
         - amd64
         - arm64
         - s390x
+    - name: "argocd"
+      description: "Argo CD is a declarative continuous deployment for Kubernetes."
+      version: "2.4.14"
+      check_status: "deployment.apps/argo-cd-argocd-server"
+      supported_architectures:
+        - amd64

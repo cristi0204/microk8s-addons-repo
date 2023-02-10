@@ -29,3 +29,11 @@ microk8s-addons:
       check_status: "${SNAP_DATA}/bin/istioctl"
       supported_architectures:
         - amd64
+    - name: "poc-multus"
+      description: "Multus CNI enables attaching multiple network interfaces to pods"
+      version: "3.9"
+      check_status: "${SNAP_DATA}/args/cni-network/00-multus.conf"
+      confinement: "classic"
+      supported_architectures:
+        - amd64
+        - arm64
